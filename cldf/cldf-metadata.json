@@ -10,7 +10,7 @@
     "prov:wasDerivedFrom": {
         "rdf:about": "https://github.com/glottolog/glottolog",
         "rdf:type": "prov:Entity",
-        "dc:created": "v3.4-70-gabae6ac"
+        "dc:created": "v4.0"
     },
     "prov:wasGeneratedBy": {
         "rdf:about": "https://github.com/glottolog/pyglottolog",
