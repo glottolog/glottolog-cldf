@@ -1,6 +1,9 @@
 # glottolog-cldf
 Glottolog data as CLDF StructureDataset
 
+[![Build Status](https://travis-ci.org/glottolog/glottolog-cldf.svg?branch=master)](https://travis-ci.org/glottolog/glottolog-cldf)
+
+
 ## Parameters
 
 - Level
