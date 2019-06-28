@@ -1,0 +1,27 @@
+ID,Parameter_ID,Name,Description,numerical_value
+level-family,level,family,sub-grouping of languoids above the language level,1
+category-Family,category,Family,,
+level-language,level,language,defined by mutual non-intellegibility,2
+category-Language,category,Language,,
+level-dialect,level,dialect,any variety which is not a language,3
+category-Dialect,category,Dialect,,
+category-Artificial_Language,category,Artificial Language,,
+category-Bookkeeping,category,Bookkeeping,,
+category-Mixed_Language,category,Mixed Language,,
+category-Pidgin,category,Pidgin,,
+category-Sign_Language,category,Sign Language,,
+category-Speech_Register,category,Speech Register,,
+category-Spoken_L1_Language,category,Spoken L1 Language,,
+category-Unattested,category,Unattested,,
+category-Unclassifiable,category,Unclassifiable,,
+aes-not_endangered,aes,not endangered,,1
+aes-threatened,aes,threatened,,2
+aes-shifting,aes,shifting,,3
+aes-moribund,aes,moribund,,4
+aes-nearly_extinct,aes,nearly extinct,,5
+aes-extinct,aes,extinct,,6
+med-long_grammar,med,long grammar,Grammar with more than 300 pages,0
+med-grammar,med,grammar,Grammar with less than 300 pages,1
+med-grammar_sketch,med,grammar sketch,Grammar sketch,2
+med-phonology_or_text,med,phonology/text,"New Testament, Text, Phonology, (typological) Study Of A Specific Feature or Dictionary",3
+med-wordlist_or_less,med,Wordlist or less,Wordlist or less,4

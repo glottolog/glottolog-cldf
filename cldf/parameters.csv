@@ -1,0 +1,7 @@
+ID,Name,Description,type
+level,Level,,categorical
+category,Category,,categorical
+classification,Classification,,
+subclassification,Subclassification,,
+aes,Agglomerated Endangerment Status,,sequential
+med,Most Extensive Description,,sequential
