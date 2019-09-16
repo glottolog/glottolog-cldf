@@ -23,4 +23,6 @@ Additional languoid metadata is provided in columns of the standard `LanguageTab
 - Longitude
 - Macroareas
 - Countries
+- `Family_ID`: Glottocode of the top-level family a languoid belongs to
+- `Language_ID`: Glottocde of the language-level languoid a dialect belongs to
 
