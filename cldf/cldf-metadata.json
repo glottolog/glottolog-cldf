@@ -10,12 +10,12 @@
     "prov:wasDerivedFrom": {
         "rdf:about": "https://github.com/glottolog/glottolog",
         "rdf:type": "prov:Entity",
-        "dc:created": "v4.0"
+        "dc:created": "v4.1"
     },
     "prov:wasGeneratedBy": {
         "rdf:about": "https://github.com/glottolog/pyglottolog",
         "rdf:type": "prov:Entity",
-        "dc:created": "2.1.1.dev0"
+        "dc:created": "3.0.1.dev0"
     },
     "dialect": {
         "commentPrefix": null
@@ -23,7 +23,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 146628,
+            "dc:extent": 148206,
             "tableSchema": {
                 "columns": [
                     {
@@ -216,7 +216,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
-            "dc:extent": 24438,
+            "dc:extent": 24701,
             "tableSchema": {
                 "columns": [
                     {
@@ -285,11 +285,11 @@
                         "name": "Countries"
                     },
                     {
-                        "datatype": "string",
+                        "dc:description": "Glottocode of the top-level genetic unit, the languoid belongs to",
                         "name": "Family_ID"
                     },
                     {
-                        "datatype": "string",
+                        "dc:description": "Glottocode of the language-level languoid, the languoid belongs to (in case of dialects)",
                         "name": "Language_ID"
                     }
                 ],
