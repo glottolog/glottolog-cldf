@@ -1,10 +1,10 @@
 ID,Parameter_ID,Name,Description,numerical_value
+level-language,level,language,defined by mutual non-intellegibility,2
+category-Language,category,Language,,
 level-dialect,level,dialect,any variety which is not a language,3
 category-Dialect,category,Dialect,,
 level-family,level,family,sub-grouping of languoids above the language level,1
 category-Family,category,Family,,
-level-language,level,language,defined by mutual non-intellegibility,2
-category-Language,category,Language,,
 category-Artificial_Language,category,Artificial Language,,
 category-Bookkeeping,category,Bookkeeping,,
 category-Mixed_Language,category,Mixed Language,,
