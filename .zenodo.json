@@ -1,12 +1,11 @@
 {
-    "title": "glottolog/glottolog-cldf: Glottolog database 4.2.1 as CLDF",
-    "license": {
-        "id": "CC-BY-4.0"
-    },
-    "access_right": "open",
-    "keywords": [
-        "linguistics",
-        "cldf:StructureDataset"
+    "communities": [
+        {
+            "identifier": "clld"
+        },
+        {
+            "identifier": "cldf-datasets"
+        }
     ],
     "creators": [
         {
@@ -15,25 +14,27 @@
         },
         {
             "affiliation": "Max Planck Institute for the Science of Human History",
-            "orcid": "0000-0003-1081-086X",
-            "name": "Robert Forkel"
+            "name": "Robert Forkel",
+            "orcid": "0000-0003-1081-086X"
         },
         {
             "affiliation": "Max Planck Institute for the Science of Human History",
-            "orcid": "0000-0003-2100-8493",
-            "name": "Martin Haspelmath"
+            "name": "Martin Haspelmath",
+            "orcid": "0000-0003-2100-8493"
         },
         {
-            "name": "Sebastian Bank"
+            "name": "Sebastian Bank",
+            "orcid": "0000-0002-2676-6296"
         }
     ],
-    "description": "<p>Hammarstr&ouml;m, Harald &amp; Forkel, Robert &amp; Haspelmath, Martin &amp; Bank, Sebastian. 2020. Glottolog 4.2.1. Jena: Max Planck Institute for the Science of Human History. (Available online at <a href=\"https://glottolog.org\">https://glottolog.org</a>)</p>",
-    "communities": [
-        {
-            "identifier": "clld"
-        },
-        {
-            "identifier": "cldf-datasets"
-        }
-    ]
+    "access_right": "open",
+    "keywords": [
+        "linguistics",
+        "cldf:StructureDataset"
+    ],
+    "license": {
+        "id": "CC-BY-4.0"
+    },
+    "description": "<p>Hammarstr&ouml;m, Harald &amp; Forkel, Robert &amp; Haspelmath, Martin &amp; Bank, Sebastian. 2020. Glottolog 4.3. Jena: Max Planck Institute for the Science of Human History. (Available online at <a href=\"https://glottolog.org\">https://glottolog.org</a>)</p>",
+    "title": "glottolog/glottolog-cldf: Glottolog database 4.3 as CLDF"
 }

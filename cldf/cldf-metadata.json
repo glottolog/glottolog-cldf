@@ -10,12 +10,12 @@
     "prov:wasDerivedFrom": {
         "rdf:about": "https://github.com/glottolog/glottolog",
         "rdf:type": "prov:Entity",
-        "dc:created": "v4.2.1"
+        "dc:created": "v4.3"
     },
     "prov:wasGeneratedBy": {
         "rdf:about": "https://github.com/glottolog/pyglottolog",
         "rdf:type": "prov:Entity",
-        "dc:created": "3.2.1"
+        "dc:created": "3.2.3.dev0"
     },
     "dialect": {
         "commentPrefix": null
@@ -23,7 +23,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 151368,
+            "dc:extent": 152634,
             "tableSchema": {
                 "columns": [
                     {
@@ -216,7 +216,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
-            "dc:extent": 25228,
+            "dc:extent": 25439,
             "tableSchema": {
                 "columns": [
                     {
