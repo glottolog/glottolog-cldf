@@ -8,8 +8,8 @@ Glottolog data as CLDF StructureDataset
 
 - Level
 - Category
-- Classification: `/` separated Glottocodes
-- Subclassification: Newick-formatted (sub)tree of descendants of languoid
+- Classification: path from root of family to languoid, `/` separated Glottocodes
+- Subclassification: Newick-formatted (sub)tree of descendants of languoid (semicolon at end omitted)
 - MostExtensiveDescription
 - EndangermentStatus
 
