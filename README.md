@@ -8,7 +8,7 @@ Glottolog data as CLDF StructureDataset
 
 - Level: language, dialect or family. "language" here does not mean that it is "assertable distinct from all other known languages" nor "has served as the main means of communication of a human society", it is a feature of the dataset structure rather than linguistic criteria. 
 - Category: specifies a) if a family-languoid represents a pseudo-family or not (i.e. Sign Languages, Mixed Languages, Pidgin, Artificial Languages, Bookeeping, Unattested, Unclassified and Unclassified within non-speudo-families), b) for language-languoids if it belongs to a pseudo-family (and if so which, except for "Unclassified within x") or is "Spoken_L1_language" and c) for dialect-languoids indicates "dialect" as category
-- Classification: path from root of family to languoid, / separated Glottocodes
+- Classification: path from root of family to languoid, `/` separated Glottocodes
 - Subclassification: Newick-formatted (sub)tree of descendants of languoid (semicolon at end omitted)
 - MostExtensiveDescription
 - EndangermentStatus
