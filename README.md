@@ -1,28 +1,26 @@
-# glottolog-cldf
-Glottolog data as CLDF StructureDataset
+# glottolog/glottolog: Glottolog database 4.4 as CLDF
 
-[![Build Status](https://travis-ci.org/glottolog/glottolog-cldf.svg?branch=master)](https://travis-ci.org/glottolog/glottolog-cldf)
+[![CLDF validation](https://github.com/glottolog/glottolog-cldf/workflows/CLDF-validation/badge.svg)](https://github.com/glottolog/glottolog-cldf/actions?query=workflow%3ACLDF-validation)
 
+## How to cite
 
-## Parameters
+If you use these data please cite
+- the original source
+  > Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2021. Glottolog 4.4. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
+- the derived dataset using the DOI of the [particular released version](releases/) you were using
 
-- Level: language, dialect or family. "language" here does not mean that it is "assertable distinct from all other known languages" nor "has served as the main means of communication of a human society", it is a feature of the dataset structure rather than linguistic criteria. 
-- Category: specifies a) if a family-languoid represents a pseudo-family or not (i.e. Sign Languages, Mixed Languages, Pidgin, Artificial Languages, Bookeeping, Unattested, Unclassified and Unclassified within non-speudo-families), b) for language-languoids if it belongs to a pseudo-family (and if so which, except for "Unclassified within x") or is "Spoken_L1_language" and c) for dialect-languoids indicates "dialect" as category
-- Classification: path from root of family to languoid, `/` separated Glottocodes
-- Subclassification: Newick-formatted (sub)tree of descendants of languoid (semicolon at end omitted)
-- Most Extensive Description - the most extensive description known for a given language (grammar most extensive)
-- Agglomerated Endangerment Status -  Language endangerment status compiled from a combination of EGDIS (Ethnologue) ElCat (Endangered Languages Catalogue) and UNESCO Atlas of Languages in Danger
+## Description
 
 
-## Languoids
+Comprehensive reference information for the world's languages, especially the lesser known languages
 
-Additional languoid metadata is provided in columns of the standard `LanguageTable`:
-- Glottocode
-- ISO639P3code
-- Latitude
-- Longitude
-- Macroareas
-- Countries
-- `Family_ID`: Glottocode of the top-level family a languoid belongs to
-- `Language_ID`: Glottocde of the language-level languoid a dialect belongs to (not to be confused with "Language_ID" in values-table)
+This dataset is licensed under a CC-BY-4.0 license
 
+Available online at https://glottolog.org
+
+
+## CLDF Datasets
+
+The following CLDF datasets are available in [cldf](cldf):
+
+- CLDF [StructureDataset](https://github.com/cldf/cldf/tree/master/modules/StructureDataset) at [cldf/cldf-metadata.json](cldf/cldf-metadata.json)

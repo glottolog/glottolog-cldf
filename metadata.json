@@ -1,0 +1,8 @@
+{
+    "title": "glottolog/glottolog: Glottolog database 4.4 as CLDF",
+    "citation": "Hammarstr\u00f6m, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2021. Glottolog 4.4. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)",
+    "url": "https://glottolog.org",
+    "description": "Comprehensive reference information for the world's languages, especially the lesser known languages",
+    "id": "glottolog",
+    "license": "CC-BY-4.0"
+}

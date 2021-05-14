@@ -1,40 +1,35 @@
 {
-    "communities": [
-        {
-            "identifier": "clld"
-        },
-        {
-            "identifier": "cldf-datasets"
-        }
-    ],
     "creators": [
         {
+            "name": "Harald Hammarstr\u00f6m",
             "affiliation": "University Uppsala",
-            "name": "Harald Hammarstr\u00f6m"
+            "orcid": ""
         },
         {
-            "affiliation": "Max Planck Institute for the Science of Human History",
             "name": "Robert Forkel",
+            "affiliation": "Max Planck Institute for Evolutionary Anthropology",
             "orcid": "0000-0003-1081-086X"
         },
         {
-            "affiliation": "Max Planck Institute for the Science of Human History",
             "name": "Martin Haspelmath",
+            "affiliation": "Max Planck Institute for Evolutionary Anthropology",
             "orcid": "0000-0003-2100-8493"
         },
         {
             "name": "Sebastian Bank",
+            "affiliation": "",
             "orcid": "0000-0002-2676-6296"
         }
     ],
+    "title": "glottolog/glottolog: Glottolog database 4.4 as CLDF",
     "access_right": "open",
     "keywords": [
-        "linguistics",
-        "cldf:StructureDataset"
+        "cldf:StructureDataset",
+        "linguistics"
     ],
+    "upload_type": "dataset",
+    "description": "<p>Cite the source of the dataset as:</p>\n\n<blockquote>\n<p>Hammarstr\u00f6m, Harald &amp; Forkel, Robert &amp; Haspelmath, Martin &amp; Bank, Sebastian. 2021. Glottolog 4.4. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)</p>\n</blockquote>",
     "license": {
         "id": "CC-BY-4.0"
-    },
-    "description": "<p>Hammarstr&ouml;m, Harald &amp; Forkel, Robert &amp; Haspelmath, Martin &amp; Bank, Sebastian. 2020. Glottolog 4.3. Jena: Max Planck Institute for the Science of Human History. (Available online at <a href=\"https://glottolog.org\">https://glottolog.org</a>)</p>",
-    "title": "glottolog/glottolog-cldf: Glottolog database 4.3 as CLDF"
+    }
 }
