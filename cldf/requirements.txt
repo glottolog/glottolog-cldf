@@ -38,7 +38,7 @@ tabulate==0.8.7
 termcolor==1.1.0
 tqdm==4.56.2
 uritemplate==3.0.1
-urllib3==1.25.8
+urllib3==1.26.5
 webencodings==0.5.1
 xlrd==2.0.1
 zenodoclient==0.4.1
