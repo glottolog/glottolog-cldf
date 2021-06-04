@@ -12,10 +12,10 @@ setup(
         ],
     },
     install_requires=[
+        'cldfbench>=1.7.1',
         'clldutils',
         'pycldf',
         'pyglottolog',
-        'cldfbench>=1.7.0',
     ],
     extras_require={
         'test': [
