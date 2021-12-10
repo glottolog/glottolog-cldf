@@ -1,9 +1,10 @@
 import pathlib
 import collections
 
+from clldutils.misc import nfilter
 from clldutils.jsonlib import dump
 from cldfbench import Dataset, CLDFSpec
-from pycldf.sources import Source
+from pycldf.sources import Source, Reference
 from pycldf.dataset import GitRepository
 import pyglottolog
 from pyglottolog import metadata
@@ -12,6 +13,8 @@ import schema
 
 
 def value(lid, pid, value, **kw):
+    if value is None:
+        return
     res = dict(
         ID='{0}-{1}'.format(lid, pid),
         Language_ID=lid,
@@ -180,7 +183,7 @@ name | affiliation | orcid | github | role
             ))
 
         languoids = collections.OrderedDict((lang.id, lang) for lang in glottolog.languoids())
-        refs_by_languoid, refs = glottolog.refs_by_languoid(languoids)
+        refs_by_languoid, refs = glottolog.refs_by_languoid(nodes=languoids)
 
         def get_language_id(lang):
             if lang.level == glottolog.languoid_levels.dialect:
@@ -204,10 +207,23 @@ name | affiliation | orcid | github | role
                 Family_ID=lang.lineage[0][1] if lang.lineage else None,
                 Language_ID=get_language_id(lang),
             ))
-            med = sorted(refs_by_languoid[lang.id], reverse=True)[0] \
-                if lang.id in refs_by_languoid else None
+
+            sources = sorted(refs_by_languoid[lang.id], reverse=True) \
+                if lang.id in refs_by_languoid else []
+            med = sources[0] if sources else None
             if med:
                 ds.add_sources(Source(med.type, med.id, _check_id=False, **med.fields))
+            meds = []
+            last_year = 10000
+            for source in sources:  # go through sources from "best" to "worst"
+                if source.year_int and source.year_int < last_year:  # pick the next earlier source:
+                    last_year = source.year_int
+                    meds.append(source)
+            if meds:
+                for m in meds:
+                    if ';' in m.id:
+                        args.log.warning('Invalid bibtex key: {}'.format(m.id))
+                    ds.add_sources(Source(m.type, m.id.replace(';', ':'), _check_id=False, **m.fields))
             clf = lang.classification_comment
             if clf:
                 for ref in clf.merged_refs('family') + clf.merged_refs('sub'):
@@ -222,7 +238,7 @@ name | affiliation | orcid | github | role
                 e = refs[aes_src]
                 ds.add_sources(Source(e.type, aes_src, _check_id=False, **e.fields))
 
-            data['ValueTable'].extend([
+            data['ValueTable'].extend(nfilter([
                 value(
                     lang.id,
                     'level',
@@ -265,4 +281,11 @@ name | affiliation | orcid | github | role
                     Source=[med.id] if med else [],
                     Code_ID='med-{0}'.format(med.med_type.id) if med else None,
                 ),
-            ])
+                value(
+                    lang.id,
+                    'medovertime',
+                    [m.text() for m in meds] or None,
+                    Source=[str(Reference(m.id.replace(';', ':'), str(m.year_int))) for m in meds],
+                    Code_ID=None,
+                )
+            ]))

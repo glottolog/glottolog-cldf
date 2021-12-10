@@ -54,6 +54,13 @@ PARAMETER_INFO = {
         'meta/glossary#sec-mostextensivedescriptionmed',
         'sequential',
     ),
+    'medovertime': ParamInfo(
+        Datatype.fromvalue({'base': 'json'}),
+        'Most Extensive Description over time',
+        'The Most Extensive Description for a given language over time.',
+        None,
+        None,
+    ),
     'aes': ParamInfo(
         Datatype.fromvalue({'base': 'integer', 'minimum': 1, 'maximum': 6}),
         'Agglomerated Endangerment Status',
