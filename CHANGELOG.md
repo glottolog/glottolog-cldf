@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 
+## [4.6] - 2022-05-24
+
+- Changes to classification, AES and documentation status.
+
+
 ## [4.5] - 2021-12-10
 
 - Added parameter `medovertime`. See https://github.com/glottolog/glottolog-cldf/issues/4
