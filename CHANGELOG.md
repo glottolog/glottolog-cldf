@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 
+## [4.6.1] - 2022-07-06
+
+- Alternative names for Glottolog languoids are now available in the CLDF dataset.
+
+
 ## [4.6] - 2022-05-24
 
 - Changes to classification, AES and documentation status.

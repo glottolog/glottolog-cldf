@@ -135,7 +135,7 @@ name | affiliation | orcid | github | role
         ds['LanguageTable', 'Macroarea'].separator = ';'
         ds['ValueTable', 'Value'].null = ['<NA>']
 
-        ds.add_table(
+        t = ds.add_table(
             'names.csv',
             {
                 "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
@@ -158,6 +158,8 @@ name | affiliation | orcid | github | role
                 "name": "lang",
             },
         )
+        t.common_props['dc:description'] = \
+            "Alternative names for Glottolog languoids  from various sources."
 
         data = args.writer.objects
         for pid, pinfo in schema.PARAMETER_INFO.items():

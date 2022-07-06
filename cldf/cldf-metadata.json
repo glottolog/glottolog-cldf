@@ -17,7 +17,7 @@
         {
             "rdf:about": "https://github.com/glottolog/glottolog-cldf",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.6",
+            "dc:created": "v4.6-2-gfd14b8d",
             "dc:title": "Repository"
         },
         {
@@ -374,6 +374,7 @@
             "url": "languages.csv"
         },
         {
+            "dc:description": "Alternative names for Glottolog languoids  from various sources.",
             "dc:extent": 121872,
             "tableSchema": {
                 "columns": [

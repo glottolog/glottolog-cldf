@@ -5,7 +5,7 @@ certifi==2019.11.28
 cffi==1.14.5
 chardet==4.0.0
 cldfbench==1.11.0
--e git+https://github.com/glottolog/glottolog-cldf.git@c8eefe82b4c87f3c566a8e5181bacf714661e18e#egg=cldfbench_glottolog
+-e git+https://github.com/glottolog/glottolog-cldf.git@fd14b8d67da4eb6c7660a3efbe69944f0184fece#egg=cldfbench_glottolog
 cldfcatalog==1.5.1
 -e git+https://github.com/cldf/cldfviz.git@8a2d36e7e6b41b5db269693312679ebc9a0f860c#egg=cldfviz
 cldfzenodo==0.2.0
