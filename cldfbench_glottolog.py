@@ -1,5 +1,6 @@
 import pathlib
 import collections
+import re
 
 from clldutils.misc import nfilter
 from clldutils.jsonlib import dump
@@ -134,6 +135,30 @@ name | affiliation | orcid | github | role
         ds['LanguageTable', 'Macroarea'].separator = ';'
         ds['ValueTable', 'Value'].null = ['<NA>']
 
+        ds.add_table(
+            'names.csv',
+            {
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "name": "ID"
+            },
+            {
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
+                "name": "Language_ID"
+            },
+            {
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                "name": "Name"
+            },
+            {
+                "propertyUrl": "http://purl.org/dc/terms/source",
+                "name": "Provider",
+            },
+            {
+                "propertyUrl": "http://purl.org/dc/elements/1.1/language",
+                "name": "lang",
+            },
+        )
+
         data = args.writer.objects
         for pid, pinfo in schema.PARAMETER_INFO.items():
             data['ParameterTable'].append(dict(
@@ -194,6 +219,7 @@ name | affiliation | orcid | github | role
         def format_ref(ref):
             return '{0}[{1}]'.format(ref.key, ref.pages.replace(';', ',')) if ref.pages else ref.key
 
+        ncount = 0
         for lang in languoids.values():
             data['LanguageTable'].append(dict(
                 ID=lang.id,
@@ -207,6 +233,22 @@ name | affiliation | orcid | github | role
                 Family_ID=lang.lineage[0][1] if lang.lineage else None,
                 Language_ID=get_language_id(lang),
             ))
+            for prov, names in sorted(lang.names.items(), key=lambda i: i[0]):
+                if prov != 'hhbib_lgcode':
+                    for name in sorted(names):
+                        lcode = ''
+                        match = re.search(r'\s*\[([a-z]+)]$', name)
+                        if match:
+                            lcode = match.groups()[0]
+                            name = name[:match.start()]
+                        ncount += 1
+                        data['names.csv'].append(dict(
+                            ID=str(ncount),
+                            Language_ID=lang.id,
+                            Name=name,
+                            Provider=prov,
+                            lang=lcode,
+                        ))
 
             sources = sorted(refs_by_languoid[lang.id], reverse=True) \
                 if lang.id in refs_by_languoid else []
