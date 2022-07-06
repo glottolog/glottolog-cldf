@@ -15,16 +15,16 @@
     "dcat:accessURL": "https://github.com/glottolog/glottolog-cldf",
     "prov:wasDerivedFrom": [
         {
-            "rdf:type": "prov:Entity",
-            "dc:title": "Repository",
             "rdf:about": "https://github.com/glottolog/glottolog-cldf",
-            "dc:created": "v4.5"
+            "rdf:type": "prov:Entity",
+            "dc:created": "v4.6",
+            "dc:title": "Repository"
         },
         {
-            "rdf:type": "prov:Entity",
-            "dc:title": "Glottolog",
             "rdf:about": "https://github.com/glottolog/glottolog",
-            "dc:created": "v4.6"
+            "rdf:type": "prov:Entity",
+            "dc:created": "v4.6",
+            "dc:title": "Glottolog"
         }
     ],
     "prov:wasGeneratedBy": [
@@ -372,6 +372,50 @@
                 ]
             },
             "url": "languages.csv"
+        },
+        {
+            "dc:extent": 121872,
+            "tableSchema": {
+                "columns": [
+                    {
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                        "name": "ID"
+                    },
+                    {
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
+                        "name": "Language_ID"
+                    },
+                    {
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                        "name": "Name"
+                    },
+                    {
+                        "propertyUrl": "http://purl.org/dc/terms/source",
+                        "name": "Provider"
+                    },
+                    {
+                        "propertyUrl": "http://purl.org/dc/elements/1.1/language",
+                        "name": "lang"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": [
+                            "Language_ID"
+                        ],
+                        "reference": {
+                            "resource": "languages.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "names.csv"
         }
     ]
 }
