@@ -9,11 +9,12 @@ import typing
 import decimal
 import collections
 
-from pycldf import Dataset
 try:
     import pyproj
 except ImportError:
     pyproj = None
+
+random.seed(12345)
 
 
 def md(coords: typing.List[typing.Tuple[decimal.Decimal, decimal.Decimal]], geod=None)\
@@ -82,9 +83,10 @@ def homelands(writer):
         Name="homeland",
         type="other",
         Description='Geocoordinate of the "homeland" of a language group computed using the '
-                    '"minimal distance" method from Wichmann and Rama 2021, serialized as JSON '
-                    'array specifying latitude and longitude. Please cite Wichmann and Rama 2021, '
-                    'if you use this data.',
+                    '"minimal distance" method from '
+                    '[Wichmann and Rama 2021](https://doi.org/10.1098/rstb.2020.0202), '
+                    'serialized as JSON array specifying latitude and longitude. '
+                    'Please cite Wichmann and Rama 2021, if you use this data.',
         datatype='"json"',
         Source=['Wichmann2021']
     ))

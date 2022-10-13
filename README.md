@@ -31,7 +31,7 @@ med | Most Extensive Description | The Most Extensive Description known for a gi
 medovertime | Most Extensive Description over time | The Most Extensive Description for a given language over time. | 
 aes | Agglomerated Endangerment Status | Language endangerment status compiled from various sources. See CodeTable for a description of the valid values. | 
 iso6393code | ISO 639-3 code | ISO 639-3 code assigned to the languoid or one of its ancestors in the classification (in case of dialects). See the related discussion at https://github.com/glottolog/glottolog-cldf/issues/13 | 
-homeland | homeland | Geocoordinate of the "homeland" of a language group computed using the "minimal distance" method from Wichmann and Rama 2021, serialized as JSON array specifying latitude and longitude. Please cite Wichmann and Rama 2021, if you use this data. | Wichmann, Søren and Rama, Taraka. 2021. Testing methods of linguistic homeland detection using synthetic data. Philosophical Transactions of the Royal Society B: Biological Sciences 376. The Royal Society.
+homeland | homeland | Geocoordinate of the "homeland" of a language group computed using the "minimal distance" method from [Wichmann and Rama 2021](https://doi.org/10.1098/rstb.2020.0202), serialized as JSON array specifying latitude and longitude. Please cite Wichmann and Rama 2021, if you use this data. | Wichmann, Søren and Rama, Taraka. 2021. Testing methods of linguistic homeland detection using synthetic data. Philosophical Transactions of the Royal Society B: Biological Sciences 376. The Royal Society.
 
 
 ## CLDF Datasets
