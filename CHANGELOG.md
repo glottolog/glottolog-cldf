@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+- Added parameter listing "closest" ISO 639-3 code for languages and dialects.
+- Added parameter listing "homelands" of language groups computed via Wichmann and Rama's "minimal distance" method.
+
 
 ## [4.6.1] - 2022-07-06
 
