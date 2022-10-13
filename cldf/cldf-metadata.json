@@ -17,7 +17,7 @@
         {
             "rdf:about": "https://github.com/glottolog/glottolog-cldf",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.6-2-gfd14b8d",
+            "dc:created": "v4.6.1",
             "dc:title": "Repository"
         },
         {
@@ -44,13 +44,10 @@
     ],
     "rdf:ID": "glottolog",
     "rdf:type": "http://www.w3.org/ns/dcat#Distribution",
-    "dialect": {
-        "commentPrefix": null
-    },
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 131048,
+            "dc:extent": 156320,
             "tableSchema": {
                 "columns": [
                     {
@@ -155,7 +152,7 @@
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
             "dc:description": "This table lists parameters (or aspects) of languoids that Glottolog assigns values for, such as the languoid's position on the Glottolog classification or the descriptive status. Refer to the `Description` column in the table for details, and to the `datatype` columnn for information how values for the parameter should be interpreted.",
-            "dc:extent": 7,
+            "dc:extent": 9,
             "tableSchema": {
                 "columns": [
                     {
@@ -183,9 +180,8 @@
                         "dc:description": "Describes the domain of the parameter",
                         "datatype": {
                             "base": "string",
-                            "format": "categorical|sequential"
+                            "format": "categorical|sequential|other"
                         },
-                        "default": null,
                         "name": "type"
                     },
                     {
@@ -197,6 +193,12 @@
                         "dc:description": "CSVW datatype description for values for this parameter. I.e. content of the Value column of associated rows in ValueTable should be interpreted/parsed accordingly",
                         "datatype": "json",
                         "name": "datatype"
+                    },
+                    {
+                        "dc:description": "Source describing the parameter in detail",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+                        "separator": ";",
+                        "name": "Source"
                     }
                 ],
                 "primaryKey": [
@@ -291,8 +293,8 @@
                     {
                         "datatype": {
                             "base": "decimal",
-                            "minimum": -90,
-                            "maximum": 90
+                            "minimum": "-90",
+                            "maximum": "90"
                         },
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#latitude",
                         "required": false,
@@ -301,8 +303,8 @@
                     {
                         "datatype": {
                             "base": "decimal",
-                            "minimum": -180,
-                            "maximum": 180
+                            "minimum": "-180",
+                            "maximum": "180"
                         },
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#longitude",
                         "required": false,
@@ -315,7 +317,7 @@
                         },
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#glottocode",
                         "required": false,
-                        "valueUrl": "http://glottolog.org/resource/languoid/id/{glottocode}",
+                        "valueUrl": "http://glottolog.org/resource/languoid/id/{Glottocode}",
                         "name": "Glottocode"
                     },
                     {

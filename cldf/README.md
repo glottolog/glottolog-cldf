@@ -15,7 +15,7 @@ property | value
 [dc:identifier](http://purl.org/dc/terms/identifier) | https://glottolog.org
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/glottolog/glottolog-cldf
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/fd14b8d">glottolog/glottolog-cldf v4.6-2-gfd14b8d</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/v4.6.1">glottolog/glottolog-cldf v4.6.1</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
 [prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.9.1.dev0">glottolog/pyglottolog 3.9.1.dev0</a></li><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | glottolog
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
@@ -26,7 +26,7 @@ property | value
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ValueTable](http://cldf.clld.org/v1.0/terms.rdf#ValueTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 131048
+[dc:extent](http://purl.org/dc/terms/extent) | 156320
 
 
 ### Columns
@@ -49,7 +49,7 @@ This table lists parameters (or aspects) of languoids that Glottolog assigns val
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ParameterTable](http://cldf.clld.org/v1.0/terms.rdf#ParameterTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 7
+[dc:extent](http://purl.org/dc/terms/extent) | 9
 
 
 ### Columns
@@ -62,6 +62,7 @@ Name/Property | Datatype | Description
 `type` | `string` | Describes the domain of the parameter
 `infoUrl` | `string` | URL (relative to `aboutUrl`) of a web page with further information about the parameter
 `datatype` | `json` | CSVW datatype description for values for this parameter. I.e. content of the Value column of associated rows in ValueTable should be interpreted/parsed accordingly
+[Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | Source describing the parameter in detail<br>References [sources.bib::BibTeX-key](./sources.bib)
 
 ## <a name="table-codescsv"></a>Table [codes.csv](./codes.csv)
 

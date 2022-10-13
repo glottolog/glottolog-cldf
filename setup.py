@@ -18,6 +18,9 @@ setup(
         'pyglottolog',
     ],
     extras_require={
+        'geo': [
+            'pyproj',
+        ],
         'test': [
             'pytest-cldf',
         ],

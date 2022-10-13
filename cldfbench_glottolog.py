@@ -1,6 +1,6 @@
+import re
 import pathlib
 import collections
-import re
 
 from clldutils.misc import nfilter
 from clldutils.jsonlib import dump
@@ -11,6 +11,7 @@ import pyglottolog
 from pyglottolog import metadata
 
 import schema
+import parameters
 
 
 def value(lid, pid, value, **kw):
@@ -37,6 +38,24 @@ class GlottologDataset(Dataset):
     def cldf_specs(self):  # A dataset must declare all CLDF sets it creates.
         return CLDFSpec(
             module='StructureDataset', dir=self.cldf_dir, metadata_fname='cldf-metadata.json')
+
+    def cmd_readme(self, args):
+        params = [
+            '\n### Parameters\n'
+            'In addition to the langoid metadata in the [LanguageTable]({0}#table-languagescsv) '
+            'this dataset contains values for the following '
+            '[parameters]({0}#table-parameterscsv).\n'.format(
+                self.cldf_dir.resolve().relative_to(self.dir.resolve())),
+            'ID | Name | Description | Source',
+            '--- | --- | --- | ---'
+        ]
+        for p in self.cldf_reader().objects('ParameterTable'):
+            params.append(' | '.join([
+                p.id,
+                p.cldf.name,
+                p.cldf.description,
+                str(p.references[0].source) if p.references else '']))
+        return super().cmd_readme(args) + '\n'.join(params) + '\n'
 
     def cmd_makecldf(self, args):
         glottolog = args.glottolog.api
@@ -74,7 +93,7 @@ name | affiliation | orcid | github | role
             'ParameterTable',
             {
                 'name': 'type',
-                'datatype': {'base': 'string', 'format': 'categorical|sequential'},
+                'datatype': {'base': 'string', 'format': 'categorical|sequential|other'},
                 'dc:description': 'Describes the domain of the parameter',
                 'default': None,
             },
@@ -91,6 +110,12 @@ name | affiliation | orcid | github | role
                     'CSVW datatype description for values for this parameter. I.e. content of the '
                     'Value column of associated rows in ValueTable should be interpreted/parsed '
                     'accordingly',
+            },
+            {
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+                "name": "Source",
+                "separator": ";",
+                "dc:description": "Source describing the parameter in detail"
             }
         )
         t.common_props['dc:description'] = \
@@ -169,7 +194,8 @@ name | affiliation | orcid | github | role
                 type=pinfo.type,
                 Description=pinfo.description,
                 infoUrl=pinfo.url,
-                datatype=pinfo.dt.asdict()
+                datatype=pinfo.dt.asdict(),
+                Source=[],
             ))
         for level in glottolog.languoid_levels.values():
             data['CodeTable'].append(dict(
@@ -333,3 +359,6 @@ name | affiliation | orcid | github | role
                     Code_ID=None,
                 )
             ]))
+
+        parameters.closest_iso(args.writer)
+        parameters.homelands(args.writer)
