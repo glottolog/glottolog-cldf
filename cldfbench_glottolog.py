@@ -2,6 +2,7 @@ import re
 import pathlib
 import collections
 
+from tqdm import tqdm
 from clldutils.misc import nfilter
 from clldutils.jsonlib import dump
 from cldfbench import Dataset, CLDFSpec
@@ -9,9 +10,9 @@ from pycldf.sources import Source, Reference
 from pycldf.dataset import GitRepository
 import pyglottolog
 from pyglottolog import metadata
+from pyglottolog import homelands
 
 import schema
-import parameters
 
 
 def value(lid, pid, value, **kw):
@@ -59,7 +60,7 @@ class GlottologDataset(Dataset):
 
     def cmd_makecldf(self, args):
         glottolog = args.glottolog.api
-
+        hl = homelands.compute(glottolog, homelands.recursive_centroids)
         contrib = ["""\
 # Contributors
 
@@ -145,6 +146,12 @@ name | affiliation | orcid | github | role
                 'dc:description':
                     'Glottocode of the language-level languoid, the languoid belongs to '
                     '(in case of dialects)'},
+            {
+                'name': 'Closest_ISO369P3code',
+                'dc:description':
+                    "ISO 639-3 code of the languoid or an ancestor if the languoid is a dialect. "
+                    "See also https://github.com/glottolog/glottolog-cldf/issues/13",
+            }
         )
         t.common_props['dc:description'] = \
             'This table lists all Glottolog languoids, i.e. families, languages and dialects ' \
@@ -152,7 +159,10 @@ name | affiliation | orcid | github | role
             'trees as described at https://glottolog.org/glottolog/glottologinformation . ' \
             'Thus, assumptions about the properties of a languoid listed here should be made ' \
             'after including associated information from ValueTable, in particular for languoid ' \
-            'level and category.'
+            'level and category. Locations for language groups, i.e. languoids of level "family" ' \
+            'are computed as recursive centroids as described at ' \
+            'https://pyglottolog.readthedocs.io/en/latest/homelands.html' \
+            '#pyglottolog.homelands.recursive_centroids'
         t.aboutUrl = 'https://glottolog.org/meta/glossary#Languoid'
         ds.add_foreign_key('LanguageTable', 'Family_ID', 'LanguageTable', 'ID')
         ds.add_foreign_key('LanguageTable', 'Language_ID', 'LanguageTable', 'ID')
@@ -248,18 +258,22 @@ name | affiliation | orcid | github | role
             return '{0}[{1}]'.format(ref.key, ref.pages.replace(';', ',')) if ref.pages else ref.key
 
         ncount = 0
-        for lang in languoids.values():
+        for lang in tqdm(languoids.values()):
+            latlon = (lang.latitude, lang.longitude)
+            if lang.latitude is None and (lang.id in hl):
+                latlon = hl[lang.id]
             data['LanguageTable'].append(dict(
                 ID=lang.id,
                 Name=lang.name,
                 Glottocode=lang.id,
                 ISO639P3code=lang.iso,
-                Latitude=lang.latitude,
-                Longitude=lang.longitude,
+                Latitude=latlon[0],
+                Longitude=latlon[1],
                 Macroarea=[ma.name for ma in lang.macroareas],
                 Countries=[c.id for c in lang.countries],
                 Family_ID=lang.lineage[0][1] if lang.lineage else None,
                 Language_ID=get_language_id(lang),
+                Closest_ISO369P3code=lang.closest_iso(),
             ))
             for prov, names in sorted(lang.names.items(), key=lambda i: i[0]):
                 if prov != 'hhbib_lgcode':
@@ -359,6 +373,3 @@ name | affiliation | orcid | github | role
                     Code_ID=None,
                 )
             ]))
-
-        parameters.closest_iso(args.writer)
-        parameters.homelands(args.writer)

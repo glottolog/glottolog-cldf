@@ -6,7 +6,7 @@ certifi==2019.11.28
 cffi==1.14.5
 chardet==4.0.0
 cldfbench==1.11.0
--e git+https://github.com/glottolog/glottolog-cldf.git@9e4532fc4f791707e1c0a477f96042ffa66d7912#egg=cldfbench_glottolog
+-e git+https://github.com/glottolog/glottolog-cldf.git@746423b54e4bec834bf58ee5f1fff5b7c9f8fa36#egg=cldfbench_glottolog
 cldfcatalog==1.5.1
 -e git+https://github.com/cldf/cldfviz.git@3c918072021b8257883ba3ff1637c16be066a2c7#egg=cldfviz
 cldfzenodo==0.2.0
@@ -41,7 +41,7 @@ py==1.10.0
 pybtex==0.24.0
 pycldf==1.28.0
 pycountry==22.3.5
--e git+https://github.com/glottolog/pyglottolog@af30e5ddb2490f593c5c58795001b739b8767d39#egg=pyglottolog
+-e git+https://github.com/glottolog/pyglottolog@e36939296a158d464353b734b110c62c702324db#egg=pyglottolog
 pyparsing==2.4.6
 pyproj==2.6.1
 pyrsistent==0.18.1
@@ -51,7 +51,7 @@ pytz==2021.1
 rdflib==5.0.0
 requests==2.25.1
 rfc3986==1.4.0
-Shapely==1.8.1.post1
+Shapely==1.7.1
 six==1.14.0
 smmap==3.0.5
 soupsieve==2.2

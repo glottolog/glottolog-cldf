@@ -15,7 +15,7 @@ setup(
         'cldfbench>=1.7.1',
         'clldutils',
         'pycldf',
-        'pyglottolog',
+        'pyglottolog[geo]>=3.10',
     ],
     extras_require={
         'geo': [

@@ -17,7 +17,7 @@
         {
             "rdf:about": "https://github.com/glottolog/glottolog-cldf",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.6.1-2-g9e4532f",
+            "dc:created": "v4.6.1-3-g746423b",
             "dc:title": "Repository"
         },
         {
@@ -31,7 +31,7 @@
         {
             "rdf:about": "https://github.com/glottolog/pyglottolog",
             "rdf:type": "prov:Entity",
-            "dc:created": "3.9.1.dev0"
+            "dc:created": "3.10.1.dev0"
         },
         {
             "dc:title": "python",
@@ -47,7 +47,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 156320,
+            "dc:extent": 131048,
             "tableSchema": {
                 "columns": [
                     {
@@ -152,7 +152,7 @@
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
             "dc:description": "This table lists parameters (or aspects) of languoids that Glottolog assigns values for, such as the languoid's position on the Glottolog classification or the descriptive status. Refer to the `Description` column in the table for details, and to the `datatype` columnn for information how values for the parameter should be interpreted.",
-            "dc:extent": 9,
+            "dc:extent": 7,
             "tableSchema": {
                 "columns": [
                     {
@@ -263,7 +263,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
-            "dc:description": "This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including \"non-genealogical\" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category.",
+            "dc:description": "This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including \"non-genealogical\" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category. Locations for language groups, i.e. languoids of level \"family\" are computed as recursive centroids as described at https://pyglottolog.readthedocs.io/en/latest/homelands.html#pyglottolog.homelands.recursive_centroids",
             "dc:extent": 26285,
             "aboutUrl": "https://glottolog.org/meta/glossary#Languoid",
             "tableSchema": {
@@ -343,6 +343,10 @@
                     {
                         "dc:description": "Glottocode of the language-level languoid, the languoid belongs to (in case of dialects)",
                         "name": "Language_ID"
+                    },
+                    {
+                        "dc:description": "ISO 639-3 code of the languoid or an ancestor if the languoid is a dialect. See also https://github.com/glottolog/glottolog-cldf/issues/13",
+                        "name": "Closest_ISO369P3code"
                     }
                 ],
                 "foreignKeys": [

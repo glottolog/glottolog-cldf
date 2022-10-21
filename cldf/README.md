@@ -15,8 +15,8 @@ property | value
 [dc:identifier](http://purl.org/dc/terms/identifier) | https://glottolog.org
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/glottolog/glottolog-cldf
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/9e4532f">glottolog/glottolog-cldf v4.6.1-2-g9e4532f</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
-[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.9.1.dev0">glottolog/pyglottolog 3.9.1.dev0</a></li><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/746423b">glottolog/glottolog-cldf v4.6.1-3-g746423b</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
+[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.10.1.dev0">glottolog/pyglottolog 3.10.1.dev0</a></li><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | glottolog
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
 
@@ -26,7 +26,7 @@ property | value
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ValueTable](http://cldf.clld.org/v1.0/terms.rdf#ValueTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 156320
+[dc:extent](http://purl.org/dc/terms/extent) | 131048
 
 
 ### Columns
@@ -49,7 +49,7 @@ This table lists parameters (or aspects) of languoids that Glottolog assigns val
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ParameterTable](http://cldf.clld.org/v1.0/terms.rdf#ParameterTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 9
+[dc:extent](http://purl.org/dc/terms/extent) | 7
 
 
 ### Columns
@@ -83,7 +83,7 @@ Name/Property | Datatype | Description
 
 ## <a name="table-languagescsv"></a>Table [languages.csv](./languages.csv)
 
-This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including "non-genealogical" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category.
+This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including "non-genealogical" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category. Locations for language groups, i.e. languoids of level "family" are computed as recursive centroids as described at https://pyglottolog.readthedocs.io/en/latest/homelands.html#pyglottolog.homelands.recursive_centroids
 
 property | value
  --- | ---
@@ -105,6 +105,7 @@ Name/Property | Datatype | Description
 [Countries](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) | list of `string` (separated by `;`) | ISO 3166-1 alpha-2 country codes for countries a language is spoken in.
 `Family_ID` | `string` | Glottocode of the top-level genetic unit, the languoid belongs to<br>References [languages.csv::ID](#table-languagescsv)
 `Language_ID` | `string` | Glottocode of the language-level languoid, the languoid belongs to (in case of dialects)<br>References [languages.csv::ID](#table-languagescsv)
+`Closest_ISO369P3code` | `string` | ISO 639-3 code of the languoid or an ancestor if the languoid is a dialect. See also https://github.com/glottolog/glottolog-cldf/issues/13
 
 ## <a name="table-namescsv"></a>Table [names.csv](./names.csv)
 
