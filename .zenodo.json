@@ -20,14 +20,14 @@
             "orcid": "0000-0002-2676-6296"
         }
     ],
-    "title": "glottolog/glottolog: Glottolog database 4.6 as CLDF",
+    "title": "glottolog/glottolog: Glottolog database 4.7 as CLDF",
     "access_right": "open",
     "keywords": [
         "cldf:StructureDataset",
         "linguistics"
     ],
     "upload_type": "dataset",
-    "description": "<p>Cite the source of the dataset as:</p>\n\n<blockquote>\n<p>Hammarstr\u00f6m, Harald &amp; Forkel, Robert &amp; Haspelmath, Martin &amp; Bank, Sebastian. 2022. Glottolog 4.6. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)</p>\n</blockquote>",
+    "description": "<p>Cite the source of the dataset as:</p>\n\n<blockquote>\n<p>Hammarstr\u00f6m, Harald &amp; Forkel, Robert &amp; Haspelmath, Martin &amp; Bank, Sebastian. 2022. Glottolog 4.7. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)</p>\n</blockquote>",
     "license": {
         "id": "CC-BY-4.0"
     }
