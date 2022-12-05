@@ -12,10 +12,10 @@ setup(
         ],
     },
     install_requires=[
+        'pycldf>=1.34.0',
         'cldfbench>=1.7.1',
         'clldutils',
-        'pycldf',
-        'pyglottolog[geo]>=3.10',
+        'pyglottolog[geo]>=3.11',
     ],
     extras_require={
         'geo': [

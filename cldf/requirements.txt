@@ -1,14 +1,15 @@
 appdirs==1.4.3
+arrow==1.2.3
 Babel==2.9.0
 bs4==0.0.1
 Cartopy==0.19.0.post1
 certifi==2019.11.28
 cffi==1.14.5
 chardet==4.0.0
-cldfbench==1.11.0
--e git+https://github.com/glottolog/glottolog-cldf.git@746423b54e4bec834bf58ee5f1fff5b7c9f8fa36#egg=cldfbench_glottolog
+cldfbench==1.13.0
+-e git+https://github.com/glottolog/glottolog-cldf.git@f852f745cb3c3a24c9577c6584619040d631def5#egg=cldfbench_glottolog
 cldfcatalog==1.5.1
--e git+https://github.com/cldf/cldfviz.git@3c918072021b8257883ba3ff1637c16be066a2c7#egg=cldfviz
+-e git+https://github.com/cldf/cldfviz.git@ba770d4c8c0511d37f51d7117c50ed71b747daf3#egg=cldfviz
 cldfzenodo==0.2.0
 clldutils==3.12.0
 colorama==0.4.3
@@ -29,8 +30,9 @@ lxml==4.8.0
 Markdown==3.3.3
 MarkupSafe==1.1.1
 matplotlib==3.5.1
+multipledispatch==0.6.0
 nameparser==1.0.6
-newick==1.0.0
+newick==1.3.2
 numpy==1.22.3
 openpyxl==3.0.7
 packaging==20.3
@@ -39,16 +41,19 @@ pluggy==0.13.1
 purl==1.5
 py==1.10.0
 pybtex==0.24.0
-pycldf==1.28.0
+-e git+https://github.com/cldf/pycldf@e06b8836cea501b057a5e47f99e0dce234961ce9#egg=pycldf
 pycountry==22.3.5
--e git+https://github.com/glottolog/pyglottolog@e36939296a158d464353b734b110c62c702324db#egg=pyglottolog
+-e git+https://github.com/glottolog/pyglottolog@3e54c4d97026b8be4ba4fa47b35937a03ac45ce8#egg=pyglottolog
 pyparsing==2.4.6
 pyproj==2.6.1
 pyrsistent==0.18.1
 pytest==6.2.2
 python-dateutil==2.8.1
+python-frontmatter==1.0.0
+python-nexus==2.9.0
 pytz==2021.1
 rdflib==5.0.0
+reportlab==3.6.12
 requests==2.25.1
 rfc3986==1.4.0
 Shapely==1.7.1
@@ -58,6 +63,9 @@ soupsieve==2.2
 SQLAlchemy==1.4.27
 tabulate==0.8.7
 termcolor==1.1.0
+toml==0.10.2
+toyplot==1.0.3
+toytree==2.0.1
 tqdm==4.56.2
 uritemplate==3.0.1
 urllib3==1.26.5

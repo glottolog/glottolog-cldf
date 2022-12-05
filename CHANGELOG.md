@@ -5,10 +5,19 @@ All notable changes to this dataset will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
-## [Unreleased]
+## [4.7] - 2022-12-05
 
-- Added parameter listing "closest" ISO 639-3 code for languages and dialects.
-- Added parameter listing "homelands" of language groups computed via Wichmann and Rama's "minimal distance" method.
+Added columns to LanguageTable
+- `Closest_ISO369P3code`: ISO 639-3 code of the languoid or an ancestor if the languoid is a dialect.
+- `First_Year_Of_Documentation`: The first year that an extinct languoid was documented (in the sense that there is data that pertains to it).
+- `Last_Year_Of_Documentation`: The last year that an extinct language was documented (in the sense that there is data that pertains to it).
+
+Added derived/computed geo-coordinates to LanguageTable:
+- "recursive centroids of immediate subgroups" for language subgroups,
+- Coordinate of the corresponding language-level languoid for dialects without proper coordinates.
+
+Added TreeTable component, with classification trees for all Glottolog top-level families with language-level
+languoids as leafs.
 
 
 ## [4.6.1] - 2022-07-06

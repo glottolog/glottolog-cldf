@@ -1,6 +1,6 @@
 <a name="ds-cldfmetadatajson"> </a>
 
-# StructureDataset glottolog/glottolog: Glottolog database 4.6 as CLDF
+# StructureDataset glottolog/glottolog: Glottolog database 4.7 as CLDF
 
 **CLDF Metadata**: [cldf-metadata.json](./cldf-metadata.json)
 
@@ -10,13 +10,13 @@ Comprehensive reference information for the world's languages, especially the le
 
 property | value
  --- | ---
-[dc:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2022. Glottolog 4.6. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
+[dc:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2022. Glottolog 4.7. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:identifier](http://purl.org/dc/terms/identifier) | https://glottolog.org
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/glottolog/glottolog-cldf
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/746423b">glottolog/glottolog-cldf v4.6.1-3-g746423b</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
-[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.10.1.dev0">glottolog/pyglottolog 3.10.1.dev0</a></li><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/f852f74">glottolog/glottolog-cldf v4.6.1-4-gf852f74</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.7">Glottolog v4.7</a></li></ol>
+[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.11.1.dev0">glottolog/pyglottolog 3.11.1.dev0</a></li><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | glottolog
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
 
@@ -26,7 +26,7 @@ property | value
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ValueTable](http://cldf.clld.org/v1.0/terms.rdf#ValueTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 131048
+[dc:extent](http://purl.org/dc/terms/extent) | 131595
 
 
 ### Columns
@@ -59,6 +59,7 @@ Name/Property | Datatype | Description
 [ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string` | Primary key
 [Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
 [Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
+[ColumnSpec](http://cldf.clld.org/v1.0/terms.rdf#columnSpec) | `json` | 
 `type` | `string` | Describes the domain of the parameter
 `infoUrl` | `string` | URL (relative to `aboutUrl`) of a web page with further information about the parameter
 `datatype` | `json` | CSVW datatype description for values for this parameter. I.e. content of the Value column of associated rows in ValueTable should be interpreted/parsed accordingly
@@ -83,12 +84,12 @@ Name/Property | Datatype | Description
 
 ## <a name="table-languagescsv"></a>Table [languages.csv](./languages.csv)
 
-This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including "non-genealogical" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category. Locations for language groups, i.e. languoids of level "family" are computed as recursive centroids as described at https://pyglottolog.readthedocs.io/en/latest/homelands.html#pyglottolog.homelands.recursive_centroids
+This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including "non-genealogical" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category. Locations (WGS 84 coordinates) for language groups, i.e. languoids of level "family are computed as recursive centroids as described at https://pyglottolog.readthedocs.io/en/latest/homelands.html#pyglottolog.homelands.recursive_centroids while locations for dialects are simply inherited from the associated languoids of level "language" in most cases.
 
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF LanguageTable](http://cldf.clld.org/v1.0/terms.rdf#LanguageTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 26285
+[dc:extent](http://purl.org/dc/terms/extent) | 26416
 
 
 ### Columns
@@ -106,6 +107,8 @@ Name/Property | Datatype | Description
 `Family_ID` | `string` | Glottocode of the top-level genetic unit, the languoid belongs to<br>References [languages.csv::ID](#table-languagescsv)
 `Language_ID` | `string` | Glottocode of the language-level languoid, the languoid belongs to (in case of dialects)<br>References [languages.csv::ID](#table-languagescsv)
 `Closest_ISO369P3code` | `string` | ISO 639-3 code of the languoid or an ancestor if the languoid is a dialect. See also https://github.com/glottolog/glottolog-cldf/issues/13
+`First_Year_Of_Documentation` | `integer` | The first year that an extinct languoid was documented (in the sense that there is data that pertains to it). Positive numbers are years AD, negative numbers are years BC.
+`Last_Year_Of_Documentation` | `integer` | The last year that an extinct language was documented.  (in the sense that there is data that pertains to it). Positive numbers are years AD, negative numbers are years BC.
 
 ## <a name="table-namescsv"></a>Table [names.csv](./names.csv)
 
@@ -113,7 +116,7 @@ Alternative names for Glottolog languoids  from various sources.
 
 property | value
  --- | ---
-[dc:extent](http://purl.org/dc/terms/extent) | 121872
+[dc:extent](http://purl.org/dc/terms/extent) | 121976
 
 
 ### Columns
@@ -125,4 +128,44 @@ Name/Property | Datatype | Description
 [Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
 [Provider](http://purl.org/dc/terms/source) | `string` | 
 [lang](http://purl.org/dc/elements/1.1/language) | `string` | 
+
+## <a name="table-treescsv"></a>Table [trees.csv](./trees.csv)
+
+property | value
+ --- | ---
+[dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF TreeTable](http://cldf.clld.org/v1.0/terms.rdf#TreeTable)
+[dc:extent](http://purl.org/dc/terms/extent) | 245
+
+
+### Columns
+
+Name/Property | Datatype | Description
+ --- | --- | --- 
+[ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string` | Primary key
+[Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | Name of tree as used in the tree file, i.e. the tree label in a Nexus file or the 1-based index of the tree in a newick file
+[Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | Describe the method that was used to create the tree, etc.
+[Tree_Is_Rooted](http://cldf.clld.org/v1.0/terms.rdf#treeIsRooted) | `boolean` | Whether the tree is rooted (Yes) or unrooted (No) (or no info is available (null))
+[Tree_Type](http://cldf.clld.org/v1.0/terms.rdf#treeType) | `string` | Whether the tree is a summary (or consensus) tree, i.e. can be analysed in isolation, or whether it is a sample, resulting from a method that creates multiple trees
+[Tree_Branch_Length_Unit](http://cldf.clld.org/v1.0/terms.rdf#treeBranchLengthUnit) | `string` | The unit used to measure evolutionary time in phylogenetic trees.
+[Media_ID](http://cldf.clld.org/v1.0/terms.rdf#mediaReference) | `string` | References a file containing a Newick representation of the tree, labeled with identifiers as described in the LanguageTable (the [Media_Type](https://cldf.clld.org/v1.0/terms.html#mediaType) column of this table should provide enough information to chose the appropriate tool to read the newick)<br>References [media.csv::ID](#table-mediacsv)
+[Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | References [sources.bib::BibTeX-key](./sources.bib)
+
+## <a name="table-mediacsv"></a>Table [media.csv](./media.csv)
+
+property | value
+ --- | ---
+[dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF MediaTable](http://cldf.clld.org/v1.0/terms.rdf#MediaTable)
+[dc:extent](http://purl.org/dc/terms/extent) | 1
+
+
+### Columns
+
+Name/Property | Datatype | Description
+ --- | --- | --- 
+[ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string` | Primary key
+[Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
+[Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
+[Media_Type](http://cldf.clld.org/v1.0/terms.rdf#mediaType) | `string` | 
+[Download_URL](http://cldf.clld.org/v1.0/terms.rdf#downloadUrl) | `anyURI` | 
+[Path_In_Zip](http://cldf.clld.org/v1.0/terms.rdf#pathInZip) | `string` | 
 
