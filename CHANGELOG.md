@@ -19,6 +19,11 @@ Added derived/computed geo-coordinates to LanguageTable:
 Added TreeTable component, with classification trees for all Glottolog top-level families with language-level
 languoids as leafs.
 
+The dataset now contains all Glottolog references which are related to at least one
+languoid. Consequently, the resulting BibTeX file needs to be zipped in order to stay
+reasonably small. `pycldf>=1.34` will deal with this transparently, for other workflows,
+you might have to unzip `cldf/sources.bib.zip` "by hand" to get the pre-4.7 behaviour back.
+
 
 ## [4.6.1] - 2022-07-06
 
