@@ -1,4 +1,4 @@
-# glottolog/glottolog: Glottolog database 4.7 as CLDF
+# glottolog/glottolog: Glottolog database 4.8 as CLDF
 
 [![CLDF validation](https://github.com/glottolog/glottolog-cldf/workflows/CLDF-validation/badge.svg)](https://github.com/glottolog/glottolog-cldf/actions?query=workflow%3ACLDF-validation)
 
@@ -6,7 +6,7 @@
 
 If you use these data please cite
 - the original source
-  > Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2022. Glottolog 4.7. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
+  > Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2023. Glottolog 4.8. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
 - the derived dataset using the DOI of the [particular released version](../../releases/) you were using
 
 ## Description

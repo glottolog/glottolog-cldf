@@ -2,7 +2,6 @@ import re
 import pathlib
 import collections
 
-from tqdm import tqdm
 from clldutils.misc import nfilter
 from clldutils.jsonlib import dump
 from cldfbench import Dataset, CLDFSpec
@@ -187,7 +186,7 @@ name | affiliation | orcid | github | role
         lcoords = {}
         nex = nexus.NexusWriter()
 
-        for lang in tqdm(sorted(languoids.values(), key=lambda lg: len(lg.lineage))):
+        for lang in sorted(languoids.values(), key=lambda lg: len(lg.lineage)):
             nn = nns.get(lang.id)
             if not nn:
                 nn = lang.newick_node(nodes=languoids, template="{l.id}")

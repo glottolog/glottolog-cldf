@@ -1,22 +1,22 @@
 <a name="ds-cldfmetadatajson"> </a>
 
-# StructureDataset glottolog/glottolog: Glottolog database 4.7 as CLDF
+# StructureDataset glottolog/glottolog: Glottolog database 4.8 as CLDF
 
 **CLDF Metadata**: [cldf-metadata.json](./cldf-metadata.json)
 
-**Sources**: [sources.bib](./sources.bib)
+**Sources**: [sources.bib.zip](./sources.bib.zip)
 
 Comprehensive reference information for the world's languages, especially the lesser known languages
 
 property | value
  --- | ---
-[dc:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2022. Glottolog 4.7. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
+[dc:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2023. Glottolog 4.8. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:identifier](http://purl.org/dc/terms/identifier) | https://glottolog.org
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/glottolog/glottolog-cldf
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/f852f74">glottolog/glottolog-cldf v4.6.1-4-gf852f74</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.7">Glottolog v4.7</a></li></ol>
-[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.11.1.dev0">glottolog/pyglottolog 3.11.1.dev0</a></li><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/e755df0">glottolog/glottolog-cldf v4.6.1-2-ge755df0</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.8">Glottolog v4.8</a></li></ol>
+[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.12.0">glottolog/pyglottolog 3.12.0</a></li><li><strong>python</strong>: 3.10.6</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | glottolog
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
 
@@ -26,7 +26,7 @@ property | value
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ValueTable](http://cldf.clld.org/v1.0/terms.rdf#ValueTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 131595
+[dc:extent](http://purl.org/dc/terms/extent) | 133064
 
 
 ### Columns
@@ -81,6 +81,7 @@ Name/Property | Datatype | Description
 [Parameter_ID](http://cldf.clld.org/v1.0/terms.rdf#parameterReference) | `string` | The parameter or variable the code belongs to.<br>References [parameters.csv::ID](#table-parameterscsv)
 [Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
 [Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
+`numerical_value` | `integer` | Integer value associated with a code. Implements ordering for ordered parameter domains.
 
 ## <a name="table-languagescsv"></a>Table [languages.csv](./languages.csv)
 
@@ -89,7 +90,7 @@ This table lists all Glottolog languoids, i.e. families, languages and dialects 
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF LanguageTable](http://cldf.clld.org/v1.0/terms.rdf#LanguageTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 26416
+[dc:extent](http://purl.org/dc/terms/extent) | 26669
 
 
 ### Columns
@@ -116,7 +117,7 @@ Alternative names for Glottolog languoids  from various sources.
 
 property | value
  --- | ---
-[dc:extent](http://purl.org/dc/terms/extent) | 121976
+[dc:extent](http://purl.org/dc/terms/extent) | 119993
 
 
 ### Columns

@@ -5,6 +5,12 @@ All notable changes to this dataset will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [4.8] - 2023-07-10
+
+- Added `numerical_value` column to CodeTable (see https://github.com/glottolog/glottolog-cldf/issues/19)
+- Fixed wrong link to zipped sources.
+
+
 ## [4.7] - 2022-12-05
 
 Added columns to LanguageTable
