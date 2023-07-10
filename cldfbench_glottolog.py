@@ -114,6 +114,7 @@ name | affiliation | orcid | github | role
                 Parameter_ID='level',
                 Name=level.name,
                 Description=level.description,
+                numerical_value=level.ordinal,
             ))
             data['CodeTable'].append(dict(
                 ID='category-{0}'.format(level.name.capitalize()),
@@ -136,6 +137,7 @@ name | affiliation | orcid | github | role
                 Parameter_ID='aes',
                 Name=el.name,
                 Description='EGIDS: {0.egids}; UNESCO: {0.unesco}; ElCat: {0.unesco}'.format(el),
+                numerical_value=el.ordinal,
             ))
 
         for el in sorted(glottolog.med_types.values()):
@@ -144,6 +146,7 @@ name | affiliation | orcid | github | role
                 Parameter_ID='med',
                 Name=el.name,
                 Description=el.description,
+                numerical_value=el.rank,
             ))
 
         srcids = set()
@@ -369,7 +372,16 @@ name | affiliation | orcid | github | role
             "descriptive status. Refer to the `Description` column in the table for details, and " \
             "to the `datatype` columnn for information how values for the parameter should be " \
             "interpreted."
-        ds.add_component('CodeTable')
+        ds.add_component(
+            'CodeTable',
+            {
+                "name": "numerical_value",
+                "datatype": "integer",
+                "dc:description":
+                    "Integer value associated with a code. Implements ordering for ordered "
+                    "parameter domains.",
+            }
+        )
         ds.add_columns('ValueTable', 'codeReference')
         t = ds.add_component(
             'LanguageTable',
