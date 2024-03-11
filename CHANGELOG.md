@@ -5,6 +5,14 @@ All notable changes to this dataset will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [5.0] - 2024-03-11
+
+- Marked `LanguageTable.Language_ID` with `parentLanguageGlottocode` property to
+  avoid confusion.
+- Added `LanguageTable.Is_Isolate` to make this propoerty more transparent.
+- Added `LanguageTable.Level` to make languoid level easier accessible.
+
+
 ## [4.8] - 2023-07-10
 
 - Added `numerical_value` column to CodeTable (see https://github.com/glottolog/glottolog-cldf/issues/19)

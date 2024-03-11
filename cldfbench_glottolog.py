@@ -227,6 +227,7 @@ name | affiliation | orcid | github | role
             data['LanguageTable'].append(dict(
                 ID=lang.id,
                 Name=lang.name,
+                Level=lang.level.name,
                 Glottocode=lang.id,
                 ISO639P3code=lang.iso,
                 Latitude=latlon[0],
@@ -238,6 +239,8 @@ name | affiliation | orcid | github | role
                 Closest_ISO369P3code=lang.closest_iso(nodes=languoids),
                 First_Year_Of_Documentation=timespan[0],
                 Last_Year_Of_Documentation=timespan[1],
+                Is_Isolate=not lang.lineage
+                    if lang.level == glottolog.languoid_levels.language else None,
             ))
             for prov, names in sorted(lang.names.items(), key=lambda i: i[0]):
                 if prov != 'hhbib_lgcode':
@@ -385,6 +388,11 @@ name | affiliation | orcid | github | role
         t = ds.add_component(
             'LanguageTable',
             {
+                'name': 'Level',
+                'datatype': {'base': 'string', 'format': 'language|dialect|family'},
+                'dc:description': 'Glottolog languoid level.'
+            },
+            {
                 'name': 'Countries',
                 'separator': ';',
                 'dc:description':
@@ -398,6 +406,7 @@ name | affiliation | orcid | github | role
                     'Glottocode of the top-level genetic unit, the languoid belongs to'},
             {
                 'name': 'Language_ID',
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#parentLanguageGlottocode",
                 'dc:description':
                     'Glottocode of the language-level languoid, the languoid belongs to '
                     '(in case of dialects)'},
@@ -422,6 +431,13 @@ name | affiliation | orcid | github | role
                     "The last year that an extinct language was documented.  (in the "
                     "sense that there is data that pertains to it). "
                     "Positive numbers are years AD, negative numbers are years BC.",
+            },
+            {
+                'name': 'Is_Isolate',
+                'datatype': 'boolean',
+                'dc:description':
+                    'Marks a language-level languoid as isolate, i.e. as language with no genetic '
+                    'relationship with other languages.'
             }
         )
         t.common_props['dc:description'] = \
