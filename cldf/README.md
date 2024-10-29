@@ -1,6 +1,6 @@
 <a name="ds-cldfmetadatajson"> </a>
 
-# StructureDataset glottolog/glottolog: Glottolog database 5.0 as CLDF
+# StructureDataset glottolog/glottolog: Glottolog database 5.1 as CLDF
 
 **CLDF Metadata**: [cldf-metadata.json](./cldf-metadata.json)
 
@@ -10,13 +10,13 @@ Comprehensive reference information for the world's languages, especially the le
 
 property | value
  --- | ---
-[dc:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2024. Glottolog 5.0. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
+[dc:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2024. Glottolog 5.1. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:identifier](http://purl.org/dc/terms/identifier) | https://glottolog.org
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/glottolog/glottolog-cldf
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/v4.8">glottolog/glottolog-cldf v4.8</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v5.0">Glottolog v5.0</a></li></ol>
-[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.13.0">glottolog/pyglottolog 3.13.0</a></li><li><strong>python</strong>: 3.10.12</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/glottolog/glottolog-cldf/tree/v5.0">glottolog/glottolog-cldf v5.0</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v5.1">Glottolog v5.1</a></li></ol>
+[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><a href="https://github.com/glottolog/pyglottolog/tree/3.14.1.dev0">glottolog/pyglottolog 3.14.1.dev0</a></li><li><strong>python</strong>: 3.12.3</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | glottolog
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
 
@@ -26,7 +26,7 @@ property | value
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ValueTable](http://cldf.clld.org/v1.0/terms.rdf#ValueTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 134185
+[dc:extent](http://purl.org/dc/terms/extent) | 134506
 
 
 ### Columns
@@ -90,7 +90,7 @@ This table lists all Glottolog languoids, i.e. families, languages and dialects 
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF LanguageTable](http://cldf.clld.org/v1.0/terms.rdf#LanguageTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 26879
+[dc:extent](http://purl.org/dc/terms/extent) | 26953
 
 
 ### Columns
@@ -119,7 +119,7 @@ Alternative names for Glottolog languoids  from various sources.
 
 property | value
  --- | ---
-[dc:extent](http://purl.org/dc/terms/extent) | 120067
+[dc:extent](http://purl.org/dc/terms/extent) | 120134
 
 
 ### Columns
@@ -137,7 +137,7 @@ Name/Property | Datatype | Description
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF TreeTable](http://cldf.clld.org/v1.0/terms.rdf#TreeTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 246
+[dc:extent](http://purl.org/dc/terms/extent) | 247
 
 
 ### Columns

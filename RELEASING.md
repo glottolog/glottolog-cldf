@@ -4,7 +4,7 @@
   ```shell
   vi CHANGELOG.md
   ```
-- Recreate the CLDF data from the appropriate version of glottolog/glottolog:
+- Recreate the CLDF data from the appropriate version of glottolog/glottolog: (about 15mins)
   ```shell
   cldfbench makecldf --with-cldfreadme --with-zenodo --glottolog-version v<version> cldfbench_glottolog.py
   cldfbench readme cldfbench_glottolog.py

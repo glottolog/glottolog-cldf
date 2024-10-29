@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='cldfbench_glottolog',
-    py_modules=['cldfbench_glottolog'],
+    py_modules=['cldfbench_glottolog', 'schema'],
     include_package_data=True,
     zip_safe=False,
     entry_points={
@@ -16,6 +16,7 @@ setup(
         'cldfbench>=1.7.1',
         'clldutils',
         'pyglottolog[geo]>=3.11',
+        'python-nexus',
     ],
     extras_require={
         'geo': [

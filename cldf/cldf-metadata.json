@@ -5,25 +5,25 @@
             "@language": "en"
         }
     ],
-    "dc:bibliographicCitation": "Hammarstr\u00f6m, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2024. Glottolog 5.0. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)",
+    "dc:bibliographicCitation": "Hammarstr\u00f6m, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2024. Glottolog 5.1. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)",
     "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#StructureDataset",
     "dc:description": "Comprehensive reference information for the world's languages, especially the lesser known languages",
     "dc:identifier": "https://glottolog.org",
     "dc:license": "https://creativecommons.org/licenses/by/4.0/",
     "dc:source": "sources.bib",
-    "dc:title": "glottolog/glottolog: Glottolog database 5.0 as CLDF",
+    "dc:title": "glottolog/glottolog: Glottolog database 5.1 as CLDF",
     "dcat:accessURL": "https://github.com/glottolog/glottolog-cldf",
     "prov:wasDerivedFrom": [
         {
             "rdf:about": "https://github.com/glottolog/glottolog-cldf",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.8",
+            "dc:created": "v5.0",
             "dc:title": "Repository"
         },
         {
             "rdf:about": "https://github.com/glottolog/glottolog",
             "rdf:type": "prov:Entity",
-            "dc:created": "v5.0",
+            "dc:created": "v5.1",
             "dc:title": "Glottolog"
         }
     ],
@@ -31,11 +31,11 @@
         {
             "rdf:about": "https://github.com/glottolog/pyglottolog",
             "rdf:type": "prov:Entity",
-            "dc:created": "3.13.0"
+            "dc:created": "3.14.1.dev0"
         },
         {
             "dc:title": "python",
-            "dc:description": "3.10.12"
+            "dc:description": "3.12.3"
         },
         {
             "dc:title": "python-packages",
@@ -47,7 +47,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 134185,
+            "dc:extent": 134506,
             "tableSchema": {
                 "columns": [
                     {
@@ -275,7 +275,7 @@
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
             "dc:description": "This table lists all Glottolog languoids, i.e. families, languages and dialects which are nodes in the Glottolog classification - including \"non-genealogical\" trees as described at https://glottolog.org/glottolog/glottologinformation . Thus, assumptions about the properties of a languoid listed here should be made after including associated information from ValueTable, in particular for languoid level and category. Locations (WGS 84 coordinates) for language groups, i.e. languoids of level \"family are computed as recursive centroids as described at https://pyglottolog.readthedocs.io/en/latest/homelands.html#pyglottolog.homelands.recursive_centroids while locations for dialects are simply inherited from the associated languoids of level \"language\" in most cases.",
-            "dc:extent": 26879,
+            "dc:extent": 26953,
             "aboutUrl": "https://glottolog.org/meta/glossary#Languoid",
             "tableSchema": {
                 "columns": [
@@ -416,7 +416,7 @@
         },
         {
             "dc:description": "Alternative names for Glottolog languoids  from various sources.",
-            "dc:extent": 120067,
+            "dc:extent": 120134,
             "tableSchema": {
                 "columns": [
                     {
@@ -461,7 +461,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#TreeTable",
-            "dc:extent": 246,
+            "dc:extent": 247,
             "tableSchema": {
                 "columns": [
                     {

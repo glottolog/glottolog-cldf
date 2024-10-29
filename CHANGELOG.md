@@ -5,6 +5,11 @@ All notable changes to this dataset will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [5.1] - 2024-10-29
+
+Based on Glottolog v5.1.
+
+
 ## [5.0] - 2024-03-11
 
 - Marked `LanguageTable.Language_ID` with `parentLanguageGlottocode` property to
