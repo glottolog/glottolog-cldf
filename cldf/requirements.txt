@@ -6,7 +6,7 @@ bs4==0.0.2
 certifi==2024.8.30
 chardet==5.2.0
 cldfbench==1.14.0
--e git+https://github.com/glottolog/glottolog-cldf.git@236533b0da499ea4114d43a2695bcbf56b59ae44#egg=cldfbench_glottolog
+-e git+https://github.com/glottolog/glottolog-cldf.git@5925ab13a3d568950ddd5301f1f1afc864258d34#egg=cldfbench_glottolog
 cldfcatalog==1.5.1
 cldfzenodo==2.1.2
 clldutils==3.23.0

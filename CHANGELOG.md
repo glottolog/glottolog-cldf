@@ -4,6 +4,12 @@ All notable changes to this dataset will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.3] - 2026-03-02
+
+Based on Glottolog v5.3
+
+- Fixed issue where macroareas for isolates without dialects were missing.
+
 
 ## [5.2.1] - 2025-06-11
 

@@ -158,8 +158,11 @@ name | affiliation | orcid | github | role
         languoids = collections.OrderedDict((lang.id, lang) for lang in glottolog.languoids())
         lg_mas = collections.defaultdict(set)  # Aggregate macroareas for families.
         for lg in languoids.values():
-            for _, gc, _ in lg.lineage:
-                lg_mas[gc] |= set(ma.name for ma in lg.macroareas)
+            if lg.lineage:
+                for _, gc, _ in lg.lineage:
+                    lg_mas[gc] |= set(ma.name for ma in lg.macroareas)
+                    lg_mas[lg.id] |= set(ma.name for ma in lg.macroareas)
+            else:
                 lg_mas[lg.id] |= set(ma.name for ma in lg.macroareas)
 
         lbc = glottolog.languoids_by_code(languoids)
