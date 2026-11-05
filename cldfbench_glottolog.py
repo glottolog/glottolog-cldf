@@ -1,6 +1,7 @@
 import re
 import pathlib
 import collections
+from typing import Any, Optional
 
 from clldutils.misc import nfilter
 from clldutils.jsonlib import dump
@@ -11,27 +12,22 @@ import pyglottolog
 from pyglottolog import metadata
 from pyglottolog import homelands
 from pyglottolog.references import BibFile
-import nexus
-from nexus.handlers.tree import Tree as NexusTree
+from commonnexus import Nexus
+from commonnexus.blocks import Trees
 
 import schema
 
 
-def value(lid, pid, value, **kw):
+def value(lid: str, pid: str, value: Any, **kw) -> Optional[dict[str, Any]]:
     if value is None:
         return
-    res = dict(
-        ID='{0}-{1}'.format(lid, pid),
-        Language_ID=lid,
-        Parameter_ID=pid,
-        Value=value,
-    )
+    res = dict(ID=f'{lid}-{pid}', Language_ID=lid, Parameter_ID=pid, Value=value)
     res.update(**kw)
     return res
 
 
 def repos(name, **kw):
-    return GitRepository('https://github.com/glottolog/{0}'.format(name), **kw)
+    return GitRepository(f'https://github.com/glottolog/{name}', **kw)
 
 
 class GlottologDataset(Dataset):
@@ -109,39 +105,39 @@ name | affiliation | orcid | github | role
             ))
         for level in glottolog.languoid_levels.values():
             data['CodeTable'].append(dict(
-                ID='level-{0}'.format(level.name),
+                ID=f'level-{level.name}',
                 Parameter_ID='level',
                 Name=level.name,
                 Description=level.description,
                 numerical_value=level.ordinal,
             ))
             data['CodeTable'].append(dict(
-                ID='category-{0}'.format(level.name.capitalize()),
+                ID=f'category-{level.name.capitalize()}',
                 Parameter_ID='category',
                 Name=level.name.capitalize()))
             data['CodeTable'].append(dict(
-                ID='category-Pseudo_{0}'.format(level.name.capitalize()),
+                ID=f'category-Pseudo_{level.name.capitalize()}',
                 Parameter_ID='category',
-                Name='Pseudo {}'.format(level.name.capitalize())))
+                Name=f'Pseudo {level.name.capitalize()}'))
 
         for el in sorted(glottolog.language_types.values()):
             data['CodeTable'].append(dict(
-                ID='category-{0}'.format(el.category.replace(' ', '_')),
+                ID=f"category-{el.category.replace(' ', '_')}",
                 Parameter_ID='category',
                 Name=el.category))
 
         for el in sorted(glottolog.aes_status.values()):
             data['CodeTable'].append(dict(
-                ID='aes-{0}'.format(el.name.replace(' ', '_')),
+                ID=f"aes-{el.name.replace(' ', '_')}",
                 Parameter_ID='aes',
                 Name=el.name,
-                Description='EGIDS: {0.egids}; UNESCO: {0.unesco}; ElCat: {0.unesco}'.format(el),
+                Description=f'EGIDS: {el.egids}; UNESCO: {el.unesco}; ElCat: {el.elcat}',
                 numerical_value=el.ordinal,
             ))
 
         for el in sorted(glottolog.med_types.values()):
             data['CodeTable'].append(dict(
-                ID='med-{0}'.format(el.id),
+                ID=f'med-{el.id}',
                 Parameter_ID='med',
                 Name=el.name,
                 Description=el.description,
@@ -193,7 +189,7 @@ name | affiliation | orcid | github | role
         nns = {}  # Cache newick nodes!
         ncount = 0
         lcoords = {}
-        nex = nexus.NexusWriter()
+        tree_specs = []
 
         for lang in sorted(languoids.values(), key=lambda lg: len(lg.lineage)):
             nn = nns.get(lang.id)
@@ -209,16 +205,16 @@ name | affiliation | orcid | github | role
                 args.writer.objects['TreeTable'].append(dict(
                     ID=lang.id,
                     Name=lang.id,
-                    Description='Glottolog classification of the languages in the family {}'.format(lang.name),
+                    Description=f'Glottolog classification of the languages in the family {lang.name}',
                     Media_ID='classification',
                 ))
-                nex.trees.append(NexusTree.from_newick(
+                tree_specs.append((
+                    lang.id,
                     lang.newick_node(
                         nodes=languoids,
                         template="{l.id}",
                         maxlevel=glottolog.languoid_levels.language),
-                    name=lang.id,
-                    rooted=True))
+                    True))
 
             lid = get_language_id(lang)
             latlon = (lang.latitude, lang.longitude)
@@ -289,16 +285,12 @@ name | affiliation | orcid | github | role
 
             aes_src = lang.endangerment.source.reference_id if lang.endangerment else None
             data['ValueTable'].extend(nfilter([
-                value(
-                    lang.id,
-                    'level',
-                    lang.level.name,
-                    Code_ID='level-{0}'.format(lang.level.name)),
+                value(lang.id, 'level', lang.level.name, Code_ID=f'level-{lang.level.name}'),
                 value(
                     lang.id,
                     'category',
                     lang.category.replace(' ', '_'),
-                    Code_ID='category-{0}'.format(lang.category.replace(' ', '_')),
+                    Code_ID=f"category-{lang.category.replace(' ', '_')}",
                 ),
                 value(
                     lang.id,
@@ -346,6 +338,8 @@ name | affiliation | orcid | github | role
                 )
             ]))
 
+        nex = Nexus()
+        nex.append_block(Trees.from_data(*tree_specs))
         nex.write_to_file(args.writer.cldf_spec.dir / 'classification.nex')
         args.writer.objects['MediaTable'].append(dict(
             ID='classification',

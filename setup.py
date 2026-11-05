@@ -16,7 +16,7 @@ setup(
         'cldfbench>=1.7.1',
         'clldutils',
         'pyglottolog[geo]>=3.11',
-        'python-nexus',
+        'commonnexus',
     ],
     extras_require={
         'geo': [
