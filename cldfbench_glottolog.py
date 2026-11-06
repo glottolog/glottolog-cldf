@@ -340,7 +340,7 @@ name | affiliation | orcid | github | role
 
         nex = Nexus()
         nex.append_block(Trees.from_data(*tree_specs))
-        nex.write_to_file(args.writer.cldf_spec.dir / 'classification.nex')
+        nex.to_file(args.writer.cldf_spec.dir / 'classification.nex')
         args.writer.objects['MediaTable'].append(dict(
             ID='classification',
             Media_Type='text/plain',

@@ -6,7 +6,7 @@
   ```
 - Recreate the CLDF data from the appropriate version of glottolog/glottolog: (about 15mins)
   ```shell
-  cldfbench makecldf --with-cldfreadme --with-zenodo --glottolog-version v<version> cldfbench_glottolog.py
+  cldfbench makecldf --with-cldfreadme --with-zenodo --glottolog-version v<version> cldfbench_glottolog.py --glottolog ../glottolog
   cldfbench readme cldfbench_glottolog.py
   ```
 - Make sure the data is valid:
