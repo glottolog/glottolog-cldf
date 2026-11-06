@@ -298,7 +298,7 @@ name | affiliation | orcid | github | role
                 value(
                     lang.id,
                     'classification',
-                    schema.PARAMETER_INFO['classification'].dt.formatted(
+                    schema.PARAMETER_INFO['classification'].dt.datatype.formatted(
                         '/'.join([li[1] for li in lang.lineage])) or None,
                     Source=[format_ref(ref) for ref in clf.merged_refs('family')] if clf else [],
                     Comment=clf.family if clf else None,
@@ -329,7 +329,8 @@ name | affiliation | orcid | github | role
                 value(
                     lang.id,
                     'medovertime',
-                    [m.text() for m in meds] or None,
+                    schema.PARAMETER_INFO['medovertime'].dt.datatype.formatted(
+                        [m.text() for m in meds] or None),
                     Source=[str(Reference(m.fields['glottolog_ref_id'], str(m.year_int))) for m in meds],
                     Code_ID=None,
                 ),
