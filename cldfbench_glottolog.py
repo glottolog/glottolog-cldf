@@ -60,6 +60,9 @@ class GlottologDataset(Dataset):
         return super().cmd_readme(args) + '\n'.join(params) + '\n'
 
     def cmd_makecldf(self, args):
+        #
+        # FIXME: add about pages!
+        #
         glottolog = args.glottolog.api
         hl = homelands.compute(glottolog, homelands.recursive_centroids)
         contrib = ["""\
@@ -100,7 +103,7 @@ name | affiliation | orcid | github | role
                 type=pinfo.type,
                 Description=pinfo.description,
                 infoUrl=pinfo.url,
-                datatype=pinfo.dt.asdict(),
+                ColumnSpec=pinfo.dt.asdict(),
                 Source=[],
             ))
         for level in glottolog.languoid_levels.values():
@@ -361,14 +364,6 @@ name | affiliation | orcid | github | role
                 'dc:description': 'URL (relative to `aboutUrl`) of a web page with further '
                                   'information about the parameter',
                 'aboutUrl': 'https://glottolog.org/{+infoUrl}',
-            },
-            {
-                'name': 'datatype',
-                'datatype': 'json',
-                'dc:description':
-                    'CSVW datatype description for values for this parameter. I.e. content of the '
-                    'Value column of associated rows in ValueTable should be interpreted/parsed '
-                    'accordingly',
             },
             {
                 "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
