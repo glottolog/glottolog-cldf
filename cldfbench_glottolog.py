@@ -330,14 +330,14 @@ name | affiliation | orcid | github | role
                     lang.id,
                     'medovertime',
                     schema.PARAMETER_INFO['medovertime'].dt.datatype.formatted(
-                        [m.text() for m in meds] or None),
+                        [m.text() for m in meds]),
                     Source=[str(Reference(m.fields['glottolog_ref_id'], str(m.year_int))) for m in meds],
                     Code_ID=None,
                 ),
                 value(
                     lang.id,
                     'bib',
-                    bool(refs_by_languoid[lang.id]) or None,
+                    schema.PARAMETER_INFO['bib'].dt.datatype.formatted(bool(refs_by_languoid[lang.id]) or None),
                     Source=sorted(refs_by_languoid.get(lang.id, [])),
                 )
             ]))
