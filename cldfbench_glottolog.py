@@ -1,6 +1,7 @@
 import re
 import pathlib
 import collections
+import shutil
 from typing import Any, Optional
 
 from clldutils.misc import nfilter
@@ -60,9 +61,7 @@ class GlottologDataset(Dataset):
         return super().cmd_readme(args) + '\n'.join(params) + '\n'
 
     def cmd_makecldf(self, args):
-        #
-        # FIXME: add about pages!
-        #
+        shutil.copytree(args.glottolog.api.path('about'), self.cldf_dir)
         glottolog = args.glottolog.api
         hl = homelands.compute(glottolog, homelands.recursive_centroids)
         contrib = ["""\

@@ -1,5 +1,7 @@
 # Releasing glottolog-cldf
 
+On `dlceutil`:
+
 - Edit the changelog:
   ```shell
   vi CHANGELOG.md
