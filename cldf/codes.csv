@@ -17,12 +17,12 @@ category-Speech_Register,category,Speech Register,,
 category-Spoken_L1_Language,category,Spoken L1 Language,,
 category-Unattested,category,Unattested,,
 category-Unclassifiable,category,Unclassifiable,,
-aes-not_endangered,aes,not endangered,EGIDS: <=6a; UNESCO: safe; ElCat: safe,1
+aes-not_endangered,aes,not endangered,EGIDS: <=6a; UNESCO: safe; ElCat: at risk/safe,1
 aes-threatened,aes,threatened,EGIDS: 6b; UNESCO: vulnerable; ElCat: vulnerable,2
-aes-shifting,aes,shifting,EGIDS: 7; UNESCO: definitely endangered; ElCat: definitely endangered,3
+aes-shifting,aes,shifting,EGIDS: 7; UNESCO: definitely endangered; ElCat: threatened/endangered,3
 aes-moribund,aes,moribund,EGIDS: 8a; UNESCO: severely endangered; ElCat: severely endangered,4
 aes-nearly_extinct,aes,nearly extinct,EGIDS: 8b; UNESCO: critically endangered; ElCat: critically endangered,5
-aes-extinct,aes,extinct,EGIDS: >=9; UNESCO: extinct; ElCat: extinct,6
+aes-extinct,aes,extinct,EGIDS: >=9; UNESCO: extinct; ElCat: dormant/awakening,6
 med-long_grammar,med,long grammar,Grammar with more than 300 pages,0
 med-grammar,med,grammar,Grammar with less than 300 pages,1
 med-grammar_sketch,med,grammar sketch,Grammar sketch,2

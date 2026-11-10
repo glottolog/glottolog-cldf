@@ -61,7 +61,10 @@ class GlottologDataset(Dataset):
         return super().cmd_readme(args) + '\n'.join(params) + '\n'
 
     def cmd_makecldf(self, args):
-        shutil.copytree(args.glottolog.api.path('about'), self.cldf_dir)
+        about_dir = self.cldf_dir / 'about'
+        if about_dir.exists():
+            shutil.rmtree(about_dir)
+        shutil.copytree(args.glottolog.api.path('about'), about_dir)
         glottolog = args.glottolog.api
         hl = homelands.compute(glottolog, homelands.recursive_centroids)
         contrib = ["""\

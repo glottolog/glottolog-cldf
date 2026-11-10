@@ -4,6 +4,14 @@ All notable changes to this dataset will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.4] - 2026-11-10
+
+Based on Glottolog v5.4
+
+- Fixed typed parameter values.
+- Added docs.
+
+
 ## [5.3] - 2026-03-02
 
 Based on Glottolog v5.3
